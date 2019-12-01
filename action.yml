@@ -1,0 +1,9 @@
+name: "Butler Push"
+description: "Publish releases to Itch.io using Butler"
+author: josephbmanley
+runs:
+  using: docker
+  image: Dockerfile
+branding:
+  icon: upload
+  color: white
