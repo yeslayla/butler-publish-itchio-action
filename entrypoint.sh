@@ -15,4 +15,5 @@ then
     versionArguement="--userversion-file ${VERSION_FILE}"
 fi
 
+echo "butler push $PACKAGE $ITCH_USER/$ITCH_GAME:$CHANNEL ${versionArguement}"
 butler push $PACKAGE $ITCH_USER/$ITCH_GAME:$CHANNEL ${versionArguement}
