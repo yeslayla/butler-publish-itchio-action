@@ -4,16 +4,15 @@ set -e
 mkdir -p ~/.config/itch
 echo $BUTLER_CREDENTIALS > ~/.config/itch/butler_creds
 
-
-versionArguement=""
+versionArgument=""
 
 if [ "$VERSION" != "" ]
 then
-    versionArguement="--userversion ${VERSION}"
+    versionArgument="--userversion ${VERSION}"
 elif [ "$VERSION_FILE" != "" ]
 then
-    versionArguement="--userversion-file ${VERSION_FILE}"
+    versionArgument="--userversion-file ${VERSION_FILE}"
 fi
 
-echo "butler push $PACKAGE $ITCH_USER/$ITCH_GAME:$CHANNEL ${versionArguement}"
-butler push $PACKAGE $ITCH_USER/$ITCH_GAME:$CHANNEL ${versionArguement}
+echo "butler push \"$PACKAGE\" $ITCH_USER/$ITCH_GAME:$CHANNEL ${versionArgument}"
+butler push "$PACKAGE" $ITCH_USER/$ITCH_GAME:$CHANNEL ${versionArgument}
