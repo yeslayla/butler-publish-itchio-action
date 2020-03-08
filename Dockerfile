@@ -5,11 +5,10 @@ LABEL "com.github.actions.description"="Publishes releases to Itch.io using Butl
 LABEL "com.github.actions.icon"="upload"
 LABEL "com.github.actions.color"="white"
 
-RUN yum update -y
-
 # Install Butler
 ADD https://dl.itch.ovh/butler/linux-amd64/head/butler /usr/bin/
 RUN chmod +x /usr/bin/butler
+RUN butler upgrade --assume-yes
 
 # Run butler push
 ADD entrypoint.sh /entrypoint.sh

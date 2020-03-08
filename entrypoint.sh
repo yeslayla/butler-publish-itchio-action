@@ -4,8 +4,6 @@ set -e
 mkdir -p ~/.config/itch
 echo $BUTLER_CREDENTIALS > ~/.config/itch/butler_creds
 
-butler upgrade --assume-yes
-
 versionArgument=""
 
 if [ "$VERSION" != "" ]
