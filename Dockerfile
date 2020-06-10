@@ -6,11 +6,12 @@ LABEL "com.github.actions.icon"="upload"
 LABEL "com.github.actions.color"="white"
 
 # Install Butler
-ADD https://dl.itch.ovh/butler/linux-amd64/head/butler /usr/bin/
-RUN chmod +x /usr/bin/butler
-RUN butler upgrade --assume-yes
+RUN curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default \
+    && unzip butler.zip \
+    && cp butler /usr/bin \
+    && chmod +x /usr/bin/butler
 
 # Run butler push
-ADD entrypoint.sh /entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
