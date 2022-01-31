@@ -1,5 +1,10 @@
 FROM centos:8
 
+RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-Linux-*
+RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-Linux-*
+
+RUN yum upgrade -y
+
 LABEL "com.github.actions.name"="Butler Push"
 LABEL "com.github.actions.description"="Publishes releases to Itch.io using Butler"
 LABEL "com.github.actions.icon"="upload"
