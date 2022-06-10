@@ -1,6 +1,6 @@
 # Butler Push
 
-This action pushes packages to itch.io with butler to easily automated releases.
+This action pushes packages to itch.io with butler to easily automate releases.
 
 ## Usage
 
