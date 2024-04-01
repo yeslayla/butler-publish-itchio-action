@@ -10,7 +10,7 @@ Example:
 
 ```yaml
 steps:
-- uses: manleydev/butler-publish-itchio-action@master
+- uses: yeslayla/butler-publish-itchio-action@master
   env:
     BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
     CHANNEL: windows

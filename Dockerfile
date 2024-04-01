@@ -8,7 +8,7 @@ LABEL "com.github.actions.color"="white"
 RUN dnf install unzip -y
 
 # Install Butler
-RUN curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default \
+RUN curl -L -o butler.zip https://broth.itch.zone/butler/linux-amd64/LATEST/archive/default \
     && unzip butler.zip \
     && cp butler /usr/bin \
     && chmod +x /usr/bin/butler

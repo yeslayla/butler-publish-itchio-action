@@ -1,6 +1,6 @@
 name: "Butler Push"
 description: "Publish releases to Itch.io using Butler"
-author: josephbmanley
+author: yeslayla
 runs:
   using: docker
   image: Dockerfile
